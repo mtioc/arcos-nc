@@ -10,7 +10,259 @@
       "notas": "",
       "activo": "sí"
     },
-    "geometria": null
+    "geometria": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -70.637857,
+          -33.378858
+        ],
+        [
+          -70.637969,
+          -33.378721
+        ],
+        [
+          -70.638691,
+          -33.378552
+        ],
+        [
+          -70.638978,
+          -33.379177
+        ],
+        [
+          -70.640227,
+          -33.382409
+        ],
+        [
+          -70.64069,
+          -33.383026
+        ],
+        [
+          -70.640775,
+          -33.383401
+        ],
+        [
+          -70.640848,
+          -33.383925
+        ],
+        [
+          -70.641048,
+          -33.384528
+        ],
+        [
+          -70.641889,
+          -33.386587
+        ],
+        [
+          -70.642252,
+          -33.387458
+        ],
+        [
+          -70.642311,
+          -33.388385
+        ],
+        [
+          -70.642344,
+          -33.38918
+        ],
+        [
+          -70.642556,
+          -33.392583
+        ],
+        [
+          -70.642682,
+          -33.392925
+        ],
+        [
+          -70.642659,
+          -33.393143
+        ],
+        [
+          -70.642666,
+          -33.394053
+        ],
+        [
+          -70.642749,
+          -33.395455
+        ],
+        [
+          -70.642846,
+          -33.397224
+        ],
+        [
+          -70.643144,
+          -33.404757
+        ],
+        [
+          -70.645394,
+          -33.423896
+        ],
+        [
+          -70.647513,
+          -33.430877
+        ],
+        [
+          -70.648607,
+          -33.432672
+        ],
+        [
+          -70.648816,
+          -33.433227
+        ],
+        [
+          -70.650522,
+          -33.432836
+        ],
+        [
+          -70.651661,
+          -33.432633
+        ],
+        [
+          -70.652932,
+          -33.432813
+        ],
+        [
+          -70.654138,
+          -33.432698
+        ],
+        [
+          -70.655896,
+          -33.432304
+        ],
+        [
+          -70.65869,
+          -33.431595
+        ],
+        [
+          -70.661421,
+          -33.430733
+        ],
+        [
+          -70.661938,
+          -33.430883
+        ],
+        [
+          -70.662079,
+          -33.431204
+        ],
+        [
+          -70.661993,
+          -33.43141
+        ],
+        [
+          -70.66173,
+          -33.431598
+        ],
+        [
+          -70.661344,
+          -33.431864
+        ],
+        [
+          -70.661203,
+          -33.432223
+        ],
+        [
+          -70.661061,
+          -33.432702
+        ],
+        [
+          -70.66077,
+          -33.434591
+        ],
+        [
+          -70.661068,
+          -33.444143
+        ],
+        [
+          -70.658269,
+          -33.454794
+        ],
+        [
+          -70.657092,
+          -33.457293
+        ],
+        [
+          -70.657291,
+          -33.461094
+        ],
+        [
+          -70.656573,
+          -33.471089
+        ],
+        [
+          -70.654931,
+          -33.474125
+        ],
+        [
+          -70.655419,
+          -33.476619
+        ],
+        [
+          -70.656702,
+          -33.479781
+        ],
+        [
+          -70.667058,
+          -33.501332
+        ],
+        [
+          -70.681706,
+          -33.531537
+        ],
+        [
+          -70.695357,
+          -33.524573
+        ],
+        [
+          -70.696689,
+          -33.523795
+        ],
+        [
+          -70.697362,
+          -33.523264
+        ],
+        [
+          -70.697488,
+          -33.523002
+        ],
+        [
+          -70.697746,
+          -33.522766
+        ],
+        [
+          -70.697859,
+          -33.522673
+        ],
+        [
+          -70.698379,
+          -33.523477
+        ],
+        [
+          -70.698975,
+          -33.524301
+        ],
+        [
+          -70.699042,
+          -33.524353
+        ],
+        [
+          -70.699267,
+          -33.524234
+        ],
+        [
+          -70.699579,
+          -33.523929
+        ],
+        [
+          -70.701288,
+          -33.524551
+        ],
+        [
+          -70.703634,
+          -33.525431
+        ]
+      ]
+    }
   },
   {
     "metadata": {
@@ -33,6 +285,32 @@
       "servicio": "",
       "sentido": "IDA",
       "calles": "Av Salvador Allende,Av Recoleta,Av Dorsal,Bajos de Jiménez",
+      "notas": "",
+      "activo": "sí"
+    },
+    "geometria": null
+  },
+  {
+    "metadata": {
+      "id": "arc_004",
+      "terminal_inicio": "LAS CAÑAS",
+      "terminal_fin": "RECOLETA",
+      "servicio": "",
+      "sentido": "VUELTA",
+      "calles": "Bajos de Jiménez,Av Dorsal,Av Recoleta,Av Salvador Allende",
+      "notas": "Termina con Salvador Allende para entrar al terminal de Recoleta",
+      "activo": "sí"
+    },
+    "geometria": null
+  },
+  {
+    "metadata": {
+      "id": "arc_005",
+      "terminal_inicio": "PEDRO LIRA",
+      "terminal_fin": "RECOLETA",
+      "servicio": "306",
+      "sentido": "VUELTA",
+      "calles": "PEDRO LIRA, GIL DE CASTRO, AV. CENTRAL CARDENAL RAÚL SILVA HENRÍQUEZ, AV. AMERICO VESPUCIO, ENLACE AMÉRICO VESPUCIO ORIENTE, AV. JOSÉ JOAQUÍN PRIETO VIAL, AV. VIEL, AV. MANUEL RODRIGUEZ, GENERAL MACKENNA, ISMAEL VALDES VERGARA, AV. RECOLETA, AV. PRESIDENTE SALVADOR ALLENDE, PATIO RECOLETA",
       "notas": "",
       "activo": "sí"
     },
@@ -152,13 +430,13 @@
   },
   {
     "metadata": {
-      "id": "arc_004",
-      "terminal_inicio": "LAS CAÑAS",
-      "terminal_fin": "RECOLETA",
-      "servicio": "",
-      "sentido": "VUELTA",
-      "calles": "Bajos de Jiménez,Av Dorsal,Av Recoleta,Av Salvador Allende",
-      "notas": "Termina con Salvador Allende para entrar al terminal de Recoleta",
+      "id": "arc_006",
+      "terminal_inicio": "RECOLETA",
+      "terminal_fin": "PEDRO LIRA",
+      "servicio": "306",
+      "sentido": "IDA",
+      "calles": "PATIO RECOLETA, AV. PRESIDENTE SALVADOR ALLENDE, AV. RECOLETA, AV. CARDENAL JOSÉ MARÍA CARO, AV. PRESIDENTE BALMACEDA, AV. MANUEL RODRIGUEZ, AV. VIEL, AV. JOSÉ JOAQUÍN PRIETO VIAL, ENLACE AMÉRICO VESPUCIO PONIENTE, AV. AMERICO VESPUCIO, AV. CENTRAL CARDENAL RAÚL SILVA HENRÍQUEZ, GIL DE CASTRO, PEDRO LIRA",
+      "notas": "",
       "activo": "sí"
     },
     "geometria": null
