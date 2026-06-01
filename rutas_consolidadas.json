@@ -10,6 +10,183 @@
       "notas": "",
       "activo": "sí"
     },
+    "geometria": null
+  },
+  {
+    "metadata": {
+      "id": "arc_002",
+      "terminal_inicio": "RECOLETA",
+      "terminal_fin": "LO BLANCO",
+      "servicio": "",
+      "sentido": "VUELTA",
+      "calles": "Av Recoleta|La Unión|Profesor Alberto Zañartu|Av La Paz|Bandera|San Pablo|Morandé|Zenteno|Tarapacá|San Diego|Gran Av José Miguel Carrera|Av Berlín|Frankfort|Av Departamental|San Francisco|Vargas Buston|Esmeralda|León Tolstoi|Av Lo Ovalle|San Francisco|La Granja|Cerro Negro|Av San Francisco|Venancia Leiva|Av San Francisco|Av Lo Blanco",
+      "notas": "Reverso de arc_001 - validar calles unidireccionales",
+      "activo": "sí"
+    },
+    "geometria": null
+  },
+  {
+    "metadata": {
+      "id": "arc_003",
+      "terminal_inicio": "RECOLETA",
+      "terminal_fin": "LAS CAÑAS",
+      "servicio": "",
+      "sentido": "IDA",
+      "calles": "Av Salvador Allende,Av Recoleta,Av Dorsal,Bajos de Jiménez",
+      "notas": "",
+      "activo": "sí"
+    },
+    "geometria": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -70.637904,
+          -33.378829
+        ],
+        [
+          -70.638023,
+          -33.378683
+        ],
+        [
+          -70.638696,
+          -33.378545
+        ],
+        [
+          -70.639087,
+          -33.379496
+        ],
+        [
+          -70.640437,
+          -33.382702
+        ],
+        [
+          -70.641182,
+          -33.384862
+        ],
+        [
+          -70.642266,
+          -33.387595
+        ],
+        [
+          -70.642471,
+          -33.391432
+        ],
+        [
+          -70.642675,
+          -33.394616
+        ],
+        [
+          -70.642727,
+          -33.396535
+        ],
+        [
+          -70.647063,
+          -33.395921
+        ],
+        [
+          -70.650399,
+          -33.395623
+        ],
+        [
+          -70.653339,
+          -33.395092
+        ],
+        [
+          -70.655392,
+          -33.395301
+        ],
+        [
+          -70.661108,
+          -33.396205
+        ],
+        [
+          -70.664983,
+          -33.396894
+        ],
+        [
+          -70.668296,
+          -33.39734
+        ],
+        [
+          -70.669813,
+          -33.397789
+        ],
+        [
+          -70.670719,
+          -33.398335
+        ],
+        [
+          -70.671473,
+          -33.398673
+        ],
+        [
+          -70.672828,
+          -33.398986
+        ],
+        [
+          -70.679599,
+          -33.401383
+        ],
+        [
+          -70.681318,
+          -33.401971
+        ],
+        [
+          -70.680679,
+          -33.403085
+        ],
+        [
+          -70.679921,
+          -33.404104
+        ],
+        [
+          -70.678261,
+          -33.405952
+        ],
+        [
+          -70.667342,
+          -33.403517
+        ]
+      ]
+    }
+  },
+  {
+    "metadata": {
+      "id": "arc_004",
+      "terminal_inicio": "LAS CAÑAS",
+      "terminal_fin": "RECOLETA",
+      "servicio": "",
+      "sentido": "VUELTA",
+      "calles": "Bajos de Jiménez,Av Dorsal,Av Recoleta,Av Salvador Allende",
+      "notas": "Termina con Salvador Allende para entrar al terminal de Recoleta",
+      "activo": "sí"
+    },
+    "geometria": null
+  },
+  {
+    "metadata": {
+      "id": "arc_005",
+      "terminal_inicio": "PEDRO LIRA",
+      "terminal_fin": "RECOLETA",
+      "servicio": "306",
+      "sentido": "VUELTA",
+      "calles": "PEDRO LIRA, GIL DE CASTRO, AV. CENTRAL CARDENAL RAÚL SILVA HENRÍQUEZ, AV. AMERICO VESPUCIO, ENLACE AMÉRICO VESPUCIO ORIENTE, AV. JOSÉ JOAQUÍN PRIETO VIAL, AV. VIEL, AV. MANUEL RODRIGUEZ, GENERAL MACKENNA, ISMAEL VALDES VERGARA, AV. RECOLETA, AV. PRESIDENTE SALVADOR ALLENDE, PATIO RECOLETA",
+      "notas": "",
+      "activo": "sí"
+    },
+    "geometria": null
+  },
+  {
+    "metadata": {
+      "id": "arc_006",
+      "terminal_inicio": "RECOLETA",
+      "terminal_fin": "PEDRO LIRA",
+      "servicio": "306",
+      "sentido": "IDA",
+      "calles": "PATIO RECOLETA, AV. PRESIDENTE SALVADOR ALLENDE, AV. RECOLETA, AV. CARDENAL JOSÉ MARÍA CARO, AV. PRESIDENTE BALMACEDA, AV. MANUEL RODRIGUEZ, AV. VIEL, AV. JOSÉ JOAQUÍN PRIETO VIAL, ENLACE AMÉRICO VESPUCIO PONIENTE, AV. AMERICO VESPUCIO, AV. CENTRAL CARDENAL RAÚL SILVA HENRÍQUEZ, GIL DE CASTRO, PEDRO LIRA",
+      "notas": "",
+      "activo": "sí"
+    },
     "geometria": {
       "type": "LineString",
       "coordinates": [
@@ -263,182 +440,5 @@
         ]
       ]
     }
-  },
-  {
-    "metadata": {
-      "id": "arc_002",
-      "terminal_inicio": "RECOLETA",
-      "terminal_fin": "LO BLANCO",
-      "servicio": "",
-      "sentido": "VUELTA",
-      "calles": "Av Recoleta|La Unión|Profesor Alberto Zañartu|Av La Paz|Bandera|San Pablo|Morandé|Zenteno|Tarapacá|San Diego|Gran Av José Miguel Carrera|Av Berlín|Frankfort|Av Departamental|San Francisco|Vargas Buston|Esmeralda|León Tolstoi|Av Lo Ovalle|San Francisco|La Granja|Cerro Negro|Av San Francisco|Venancia Leiva|Av San Francisco|Av Lo Blanco",
-      "notas": "Reverso de arc_001 - validar calles unidireccionales",
-      "activo": "sí"
-    },
-    "geometria": null
-  },
-  {
-    "metadata": {
-      "id": "arc_003",
-      "terminal_inicio": "RECOLETA",
-      "terminal_fin": "LAS CAÑAS",
-      "servicio": "",
-      "sentido": "IDA",
-      "calles": "Av Salvador Allende,Av Recoleta,Av Dorsal,Bajos de Jiménez",
-      "notas": "",
-      "activo": "sí"
-    },
-    "geometria": null
-  },
-  {
-    "metadata": {
-      "id": "arc_004",
-      "terminal_inicio": "LAS CAÑAS",
-      "terminal_fin": "RECOLETA",
-      "servicio": "",
-      "sentido": "VUELTA",
-      "calles": "Bajos de Jiménez,Av Dorsal,Av Recoleta,Av Salvador Allende",
-      "notas": "Termina con Salvador Allende para entrar al terminal de Recoleta",
-      "activo": "sí"
-    },
-    "geometria": null
-  },
-  {
-    "metadata": {
-      "id": "arc_005",
-      "terminal_inicio": "PEDRO LIRA",
-      "terminal_fin": "RECOLETA",
-      "servicio": "306",
-      "sentido": "VUELTA",
-      "calles": "PEDRO LIRA, GIL DE CASTRO, AV. CENTRAL CARDENAL RAÚL SILVA HENRÍQUEZ, AV. AMERICO VESPUCIO, ENLACE AMÉRICO VESPUCIO ORIENTE, AV. JOSÉ JOAQUÍN PRIETO VIAL, AV. VIEL, AV. MANUEL RODRIGUEZ, GENERAL MACKENNA, ISMAEL VALDES VERGARA, AV. RECOLETA, AV. PRESIDENTE SALVADOR ALLENDE, PATIO RECOLETA",
-      "notas": "",
-      "activo": "sí"
-    },
-    "geometria": {
-      "type": "LineString",
-      "coordinates": [
-        [
-          -70.637904,
-          -33.378829
-        ],
-        [
-          -70.638023,
-          -33.378683
-        ],
-        [
-          -70.638696,
-          -33.378545
-        ],
-        [
-          -70.639087,
-          -33.379496
-        ],
-        [
-          -70.640437,
-          -33.382702
-        ],
-        [
-          -70.641182,
-          -33.384862
-        ],
-        [
-          -70.642266,
-          -33.387595
-        ],
-        [
-          -70.642471,
-          -33.391432
-        ],
-        [
-          -70.642675,
-          -33.394616
-        ],
-        [
-          -70.642727,
-          -33.396535
-        ],
-        [
-          -70.647063,
-          -33.395921
-        ],
-        [
-          -70.650399,
-          -33.395623
-        ],
-        [
-          -70.653339,
-          -33.395092
-        ],
-        [
-          -70.655392,
-          -33.395301
-        ],
-        [
-          -70.661108,
-          -33.396205
-        ],
-        [
-          -70.664983,
-          -33.396894
-        ],
-        [
-          -70.668296,
-          -33.39734
-        ],
-        [
-          -70.669813,
-          -33.397789
-        ],
-        [
-          -70.670719,
-          -33.398335
-        ],
-        [
-          -70.671473,
-          -33.398673
-        ],
-        [
-          -70.672828,
-          -33.398986
-        ],
-        [
-          -70.679599,
-          -33.401383
-        ],
-        [
-          -70.681318,
-          -33.401971
-        ],
-        [
-          -70.680679,
-          -33.403085
-        ],
-        [
-          -70.679921,
-          -33.404104
-        ],
-        [
-          -70.678261,
-          -33.405952
-        ],
-        [
-          -70.667342,
-          -33.403517
-        ]
-      ]
-    }
-  },
-  {
-    "metadata": {
-      "id": "arc_006",
-      "terminal_inicio": "RECOLETA",
-      "terminal_fin": "PEDRO LIRA",
-      "servicio": "306",
-      "sentido": "IDA",
-      "calles": "PATIO RECOLETA, AV. PRESIDENTE SALVADOR ALLENDE, AV. RECOLETA, AV. CARDENAL JOSÉ MARÍA CARO, AV. PRESIDENTE BALMACEDA, AV. MANUEL RODRIGUEZ, AV. VIEL, AV. JOSÉ JOAQUÍN PRIETO VIAL, ENLACE AMÉRICO VESPUCIO PONIENTE, AV. AMERICO VESPUCIO, AV. CENTRAL CARDENAL RAÚL SILVA HENRÍQUEZ, GIL DE CASTRO, PEDRO LIRA",
-      "notas": "",
-      "activo": "sí"
-    },
-    "geometria": null
   }
 ]
