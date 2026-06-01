@@ -10,6 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin="" />
+
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -72,11 +76,25 @@
             </div>
         </header>
 
-        <!-- Placeholder donde irá el mapa en la siguiente iteración -->
-        <div id="placeholder-mapa" class="placeholder-mapa">
-            <div class="placeholder-icono">▭</div>
-            <p class="placeholder-titulo">Espacio para el mapa</p>
-            <p class="placeholder-sub">Próxima iteración: Leaflet + polyline</p>
+        <!-- Mapa real (Leaflet) -->
+        <div id="mapa" class="mapa"></div>
+
+        <!-- Mensaje cuando el arco no tiene coordenadas -->
+        <div id="mapa-vacio" class="mapa-vacio oculto">
+            <p class="mapa-vacio-titulo">Sin mapa todavía</p>
+            <p class="mapa-vacio-sub">Dibujá la ruta en geojson.io y guardala como <code>id_del_arco.geojson</code></p>
+        </div>
+
+        <!-- Botones de navegación -->
+        <div class="acciones">
+            <a id="btn-waze" class="btn-accion btn-waze" target="_blank" rel="noopener">
+                <span class="btn-icono">▸</span>
+                <span class="btn-label">Abrir en Waze</span>
+            </a>
+            <a id="btn-maps" class="btn-accion btn-maps" target="_blank" rel="noopener">
+                <span class="btn-icono">▸</span>
+                <span class="btn-label">Abrir en Maps</span>
+            </a>
         </div>
 
         <div class="recorrido">
@@ -87,6 +105,9 @@
 
     </section>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
     <script src="app.js"></script>
 </body>
 </html>

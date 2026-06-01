@@ -4,6 +4,8 @@
 // =============================================================================
 
 let ARCOS = [];
+let MAPA = null;
+let CAPA_RUTA = null;
 
 // -----------------------------------------------------------------------------
 // CARGA INICIAL
@@ -14,10 +16,9 @@ async function init() {
         const res = await fetch('rutas_consolidadas.json');
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const raw = await res.json();
-        // Normalizamos cada arco a una estructura plana para usar en la UI
         ARCOS = raw
             .map(normalizarArco)
-            .filter(a => a.id); // ignoramos filas sin id
+            .filter(a => a.id);
     } catch (e) {
         console.error('No se pudo cargar rutas_consolidadas.json', e);
         document.getElementById('lista').innerHTML =
@@ -53,10 +54,6 @@ function normalizarArco(reg) {
     };
 }
 
-/**
- * Parsea la columna de calles del CSV.
- * Acepta separador '|' o ','. Si hay '|', usa ese (mejor para nombres con coma).
- */
 function parsearCalles(s) {
     if (!s || !s.trim()) return [];
     const sep = s.includes('|') ? '|' : ',';
@@ -64,7 +61,7 @@ function parsearCalles(s) {
 }
 
 // -----------------------------------------------------------------------------
-// POBLAR SELECTORES DE FILTRO
+// POBLAR SELECTORES
 // -----------------------------------------------------------------------------
 
 function poblarSelectores() {
@@ -157,7 +154,6 @@ function renderLista(arcos) {
         return;
     }
 
-    // Construimos el HTML como string para evitar muchas creaciones DOM separadas
     ul.innerHTML = arcos.map(a => `
         <li class="arco-card" data-id="${a.id}">
             <div class="arco-ruta">
@@ -176,7 +172,6 @@ function renderLista(arcos) {
         </li>
     `).join('');
 
-    // Bindeamos los clicks
     ul.querySelectorAll('.arco-card').forEach(card => {
         card.addEventListener('click', () => {
             const arco = ARCOS.find(a => a.id === card.dataset.id);
@@ -185,7 +180,6 @@ function renderLista(arcos) {
     });
 }
 
-// Pequeño helper para evitar XSS al insertar texto de los datos en HTML
 function escapar(s) {
     if (!s) return '';
     return String(s)
@@ -211,11 +205,9 @@ function mostrarDetalle(arco) {
 
     // Lista de calles
     const ol = document.getElementById('lista-calles');
-    ol.innerHTML = arco.calles
-        .map(c => `<li>${escapar(c)}</li>`)
-        .join('');
+    ol.innerHTML = arco.calles.map(c => `<li>${escapar(c)}</li>`).join('');
 
-    // Notas (si hay)
+    // Notas
     const notas = document.getElementById('notas');
     if (arco.notas) {
         notas.textContent = arco.notas;
@@ -224,12 +216,145 @@ function mostrarDetalle(arco) {
         notas.classList.add('oculto');
     }
 
+    // Mapa + botones
+    renderMapa(arco);
+    setupBotones(arco);
+
     window.scrollTo({ top: 0, behavior: 'instant' });
 }
+
+// -----------------------------------------------------------------------------
+// MAPA (Leaflet)
+// -----------------------------------------------------------------------------
+
+function renderMapa(arco) {
+    const mapaDiv  = document.getElementById('mapa');
+    const vacioDiv = document.getElementById('mapa-vacio');
+
+    // Destruir el mapa anterior si existía
+    if (MAPA) {
+        MAPA.remove();
+        MAPA = null;
+        CAPA_RUTA = null;
+    }
+
+    // Si no tiene coordenadas, mostrar el placeholder vacío y salir
+    if (!arco.tiene_mapa) {
+        mapaDiv.classList.add('oculto');
+        vacioDiv.classList.remove('oculto');
+        return;
+    }
+
+    mapaDiv.classList.remove('oculto');
+    vacioDiv.classList.add('oculto');
+
+    // GeoJSON viene como [lng, lat], Leaflet quiere [lat, lng]
+    const coords = arco.coordenadas.map(([lng, lat]) => [lat, lng]);
+
+    MAPA = L.map('mapa', {
+        zoomControl: true,
+        attributionControl: false
+    });
+
+    // Tiles oscuros para combinar con el dark mode (CartoDB Dark Matter)
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        maxZoom: 19,
+        subdomains: 'abcd'
+    }).addTo(MAPA);
+
+    // Polyline naranja con la ruta
+    CAPA_RUTA = L.polyline(coords, {
+        color: '#FF6B1A',
+        weight: 5,
+        opacity: 0.95,
+        lineCap: 'round',
+        lineJoin: 'round'
+    }).addTo(MAPA);
+
+    // Marcador de inicio (verde Waze)
+    L.circleMarker(coords[0], {
+        radius: 8,
+        color: '#33CCCC',
+        fillColor: '#33CCCC',
+        fillOpacity: 1,
+        weight: 2
+    }).addTo(MAPA).bindPopup('<b>Inicio:</b> ' + escapar(arco.terminal_inicio));
+
+    // Marcador de fin (naranja)
+    L.circleMarker(coords[coords.length - 1], {
+        radius: 8,
+        color: '#FFFFFF',
+        fillColor: '#FF6B1A',
+        fillOpacity: 1,
+        weight: 2
+    }).addTo(MAPA).bindPopup('<b>Fin:</b> ' + escapar(arco.terminal_fin));
+
+    // Ajustar el mapa para que se vea toda la ruta
+    MAPA.fitBounds(L.latLngBounds(coords).pad(0.05));
+
+    // Importante: Leaflet a veces no calcula bien el tamaño cuando el contenedor
+    // estaba oculto. Forzar recálculo tras un tick.
+    setTimeout(() => MAPA && MAPA.invalidateSize(), 100);
+}
+
+// -----------------------------------------------------------------------------
+// DEEP LINKS A WAZE / GOOGLE MAPS
+// -----------------------------------------------------------------------------
+
+function setupBotones(arco) {
+    const btnWaze = document.getElementById('btn-waze');
+    const btnMaps = document.getElementById('btn-maps');
+
+    if (!arco.tiene_mapa) {
+        btnWaze.classList.add('deshabilitado');
+        btnMaps.classList.add('deshabilitado');
+        btnWaze.removeAttribute('href');
+        btnMaps.removeAttribute('href');
+        return;
+    }
+
+    btnWaze.classList.remove('deshabilitado');
+    btnMaps.classList.remove('deshabilitado');
+
+    const coords = arco.coordenadas; // [lng, lat]
+    const inicio = coords[0];
+    const fin    = coords[coords.length - 1];
+
+    // WAZE: solo navega al destino final
+    btnWaze.href = `https://waze.com/ul?ll=${fin[1]},${fin[0]}&navigate=yes`;
+
+    // GOOGLE MAPS: ruta completa con waypoints intermedios (max 8 para no pasarse del límite)
+    const intermedios = sampleWaypoints(coords.slice(1, -1), 8);
+    const wpStr = intermedios.map(c => `${c[1]},${c[0]}`).join('|');
+
+    let mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${inicio[1]},${inicio[0]}&destination=${fin[1]},${fin[0]}`;
+    if (wpStr) mapsUrl += `&waypoints=${encodeURIComponent(wpStr)}`;
+
+    btnMaps.href = mapsUrl;
+}
+
+function sampleWaypoints(coords, maxPoints) {
+    if (coords.length <= maxPoints) return coords;
+    const step = coords.length / maxPoints;
+    const sampled = [];
+    for (let i = 0; i < maxPoints; i++) {
+        sampled.push(coords[Math.floor(i * step)]);
+    }
+    return sampled;
+}
+
+// -----------------------------------------------------------------------------
+// VOLVER A LA LISTA
+// -----------------------------------------------------------------------------
 
 function volverALista() {
     document.getElementById('vista-detalle').classList.add('oculta');
     document.getElementById('vista-lista').classList.remove('oculta');
+    if (MAPA) {
+        MAPA.remove();
+        MAPA = null;
+        CAPA_RUTA = null;
+    }
 }
 
 // -----------------------------------------------------------------------------

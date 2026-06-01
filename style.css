@@ -7,6 +7,9 @@
     --naranja:        #FF6B1A;
     --naranja-soft:   #FF8A4D;
     --naranja-bg:     rgba(255, 107, 26, 0.08);
+    --waze:           #33CCCC;
+    --waze-text:      #0A2424;
+    --maps:           #4285F4;
 
     --bg:             #0A0A0A;
     --bg-card:        #161616;
@@ -334,11 +337,21 @@ body {
 }
 
 /* ============================================================
-   PLACEHOLDER del mapa (se reemplazará después)
+   MAPA
    ============================================================ */
 
-.placeholder-mapa {
-    height: 200px;
+.mapa {
+    height: 320px;
+    width: 100%;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 14px;
+    background: #0F0F0F;
+    border: 1px solid var(--border);
+}
+
+.mapa-vacio {
+    height: 160px;
     background: var(--bg-card);
     border: 1px dashed var(--border-strong);
     border-radius: var(--radius);
@@ -347,30 +360,114 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
     padding: 20px;
 }
 
-.placeholder-icono {
-    font-size: 36px;
-    color: var(--border-strong);
-    margin-bottom: 8px;
-    font-family: monospace;
-}
-
-.placeholder-titulo {
+.mapa-vacio-titulo {
+    color: var(--text);
     font-family: 'Archivo', sans-serif;
     font-weight: 700;
-    font-size: 13px;
-    color: var(--text-dim);
-    letter-spacing: 0.08em;
+    font-size: 14px;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
 }
 
-.placeholder-sub {
+.mapa-vacio-sub {
     color: var(--text-muted);
-    font-size: 12px;
+    font-size: 13px;
     margin-top: 6px;
+    max-width: 360px;
+}
+
+.mapa-vacio code {
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    background: var(--bg-input);
+    padding: 1px 6px;
+    border-radius: 3px;
+    color: var(--text-dim);
+    font-size: 12px;
+}
+
+/* Override de Leaflet para que respete el dark mode */
+.leaflet-container {
+    background: #0F0F0F !important;
+    font-family: 'Manrope', sans-serif !important;
+}
+
+.leaflet-popup-content-wrapper {
+    background: var(--bg-card) !important;
+    color: var(--text) !important;
+    border-radius: var(--radius-sm) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5) !important;
+}
+
+.leaflet-popup-tip {
+    background: var(--bg-card) !important;
+}
+
+.leaflet-control-zoom a {
+    background: var(--bg-card) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+.leaflet-control-zoom a:hover {
+    background: var(--bg-input) !important;
+}
+
+/* ============================================================
+   BOTONES DE ACCIÓN (Waze / Maps)
+   ============================================================ */
+
+.acciones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.btn-accion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 18px 12px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    transition: transform 0.08s ease, filter 0.1s ease;
+    user-select: none;
+}
+
+.btn-accion:active {
+    transform: scale(0.97);
+    filter: brightness(0.92);
+}
+
+.btn-accion.deshabilitado {
+    opacity: 0.25;
+    pointer-events: none;
+    filter: grayscale(0.5);
+}
+
+.btn-waze {
+    background: var(--waze);
+    color: var(--waze-text);
+}
+
+.btn-maps {
+    background: var(--maps);
+    color: #FFFFFF;
+}
+
+.btn-icono {
+    font-size: 18px;
+    line-height: 1;
 }
 
 /* ============================================================
@@ -451,5 +548,8 @@ body {
     }
     .arco-ruta {
         font-size: 18px;
+    }
+    .mapa {
+        height: 420px;
     }
 }
