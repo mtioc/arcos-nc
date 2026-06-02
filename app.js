@@ -13,7 +13,7 @@ let CAPA_RUTA = null;
 
 async function init() {
     try {
-        const res = await fetch('rutas_consolidadas.json');
+        const res = await fetch('rutas_consolidadas.json?v=' + Date.now());
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const raw = await res.json();
         ARCOS = raw
