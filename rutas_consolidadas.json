@@ -444,7 +444,7 @@
       "terminal_fin": "CONCHA Y TORO",
       "servicio": "PA-CYT-SA-AM",
       "sentido": "IDA",
-      "calles": "Cabezal Marcoleta;AV. SANTA ROSA;AV. LIBERTADOR BERNARDO O´HIGGINS;CARMEN;AV. MANUEL ANTONIO MATTA;AV. VICUÑA MACKENNA;AV. VICUÑA MACKENNA;AV. VICUÑA MACKENNA;AV. CONCHA Y TORO;ARTURO PRAT;Terminal Concha y Toro",
+      "calles": "Cabezal Marcoleta,AV. SANTA ROSA,AV. LIBERTADOR BERNARDO O´HIGGINS,CARMEN,AV. MANUEL ANTONIO MATTA,AV. VICUÑA MACKENNA,AV. VICUÑA MACKENNA,AV. VICUÑA MACKENNA,AV. CONCHA Y TORO,ARTURO PRAT,Terminal Concha y Toro",
       "notas": "",
       "activo": "sí"
     },
@@ -741,7 +741,7 @@
       "terminal_fin": "SANTA ANA",
       "servicio": "SJ-LL",
       "sentido": "",
-      "calles": "JOSE BESA; AV. SAN JOSE; BARROS ARANA; COVADONGA; FREIRE; 1; AV. COLÓN NORTE; AV. AMÉRICA; AV. OCHAGAVÍA; AV. JOSÉ JOAQUIN PRIETO VIAL; AV. JOSE JOAQUIN PRIETO VIAL; AV. JOSE JOAQUIN PRIETO VIAL; AV. VIEL; AV. MANUEL RODRÍGUEZ; SANTO DOMINGO; AV. MANUEL RODRIGUEZ",
+      "calles": "JOSE BESA, AV. SAN JOSE, BARROS ARANA, COVADONGA, FREIRE, 1, AV. COLÓN NORTE, AV. AMÉRICA, AV. OCHAGAVÍA, AV. JOSÉ JOAQUIN PRIETO VIAL, AV. JOSE JOAQUIN PRIETO VIAL, AV. JOSE JOAQUIN PRIETO VIAL, AV. VIEL, AV. MANUEL RODRÍGUEZ, SANTO DOMINGO, AV. MANUEL RODRIGUEZ",
       "notas": "",
       "activo": "sí"
     },
@@ -1134,7 +1134,7 @@
       "terminal_fin": "CONCHA Y TORO",
       "servicio": "PA-CYT-SA-AM",
       "sentido": "IDA",
-      "calles": "Terminal Pie Andino;Av. Paseo Pie Andino;Av. Doctor Eduardo Cordero;Av. Concha y Toro;Terminal Concha y Toro",
+      "calles": "Terminal Pie Andino,Av. Paseo Pie Andino,Av. Doctor Eduardo Cordero,Av. Concha y Toro,Terminal Concha y Toro",
       "notas": "",
       "activo": "sí"
     },
@@ -1516,7 +1516,7 @@
       "terminal_fin": "SANTA ROSA",
       "servicio": "RE-LB-SR",
       "sentido": "",
-      "calles": "Avenida Recoleta;Avenida Salvador Allende;Avenida Recoleta;San Antonio;San Francisco;Avenida Santa Rosa",
+      "calles": "Avenida Recoleta,Avenida Salvador Allende,Avenida Recoleta,San Antonio,San Francisco,Avenida Santa Rosa",
       "notas": "",
       "activo": "sí"
     },
@@ -1773,7 +1773,7 @@
       "terminal_fin": "RECOLETA",
       "servicio": "RE-LB-SR",
       "sentido": "",
-      "calles": "Patio Santa Rosa;Avenida Santa Rosa;Enrique Mac Iver;Avenida Recoleta",
+      "calles": "Patio Santa Rosa,Avenida Santa Rosa,Enrique Mac Iver,Avenida Recoleta",
       "notas": "",
       "activo": "sí"
     },
@@ -2640,7 +2640,7 @@
       "terminal_fin": "ÑUBLE",
       "servicio": "RE-LB-SR",
       "sentido": "",
-      "calles": "PATIO SANTA ROSA; CORREDOR SANTA ROSA; CORREDOR SANTA ROSA; AV. SANTA ROSA; CORREDOR SANTA ROSA; AV. SANTA ROSA; AV. SANTA ROSA; ÑUBLE; AV. VICUÑA MACKENNA",
+      "calles": "PATIO SANTA ROSA, CORREDOR SANTA ROSA, CORREDOR SANTA ROSA, AV. SANTA ROSA, CORREDOR SANTA ROSA, AV. SANTA ROSA, AV. SANTA ROSA, ÑUBLE, AV. VICUÑA MACKENNA",
       "notas": "",
       "activo": "sí"
     },
@@ -2789,7 +2789,7 @@
       "terminal_fin": "SANTA ROSA",
       "servicio": "RE-LB-SR",
       "sentido": "",
-      "calles": "AV. VICUÑA MACKENNA; AV. VICUÑA MACKENNA; AV. ISABEL RIQUELME; AV. SANTA ROSA; AV. SANTA ROSA; AV. SANTA ROSA; PATIO SANTA ROSA",
+      "calles": "AV. VICUÑA MACKENNA, AV. VICUÑA MACKENNA, AV. ISABEL RIQUELME, AV. SANTA ROSA, AV. SANTA ROSA, AV. SANTA ROSA, PATIO SANTA ROSA",
       "notas": "",
       "activo": "sí"
     },
@@ -3170,7 +3170,7 @@
       "terminal_fin": "LO OVALLE",
       "servicio": "RE-LB-SR",
       "sentido": "",
-      "calles": "PATIO SANTA ROSA; AV. SANTA ROSA; AV. SANTA ROSA; AV. ELIAS FERNÁNDEZ ALBANO; AV. ELIAS FERNÁNDEZ ALBANO; PAULINA; SERGIO CEPPI; EIM LO OVALLE",
+      "calles": "PATIO SANTA ROSA, AV. SANTA ROSA, AV. SANTA ROSA, AV. ELIAS FERNÁNDEZ ALBANO, AV. ELIAS FERNÁNDEZ ALBANO, PAULINA, SERGIO CEPPI, EIM LO OVALLE",
       "notas": "",
       "activo": "sí"
     },
@@ -3387,7 +3387,7 @@
       "terminal_fin": "SANTA ROSA",
       "servicio": "RE-LB-SR",
       "sentido": "",
-      "calles": "EIM LO OVALLE; SERGIO CARVAJAL; PAULINA; GRAN AVENIDA JOSÉ MIGUEL CARRERA; AV. ELIAS FERNÁNDEZ ALBANO; AV. ELIAS FERNÁNDEZ ALBANO; AV. SANTA ROSA; AV. SANTA ROSA; PATIO SANTA ROSA",
+      "calles": "EIM LO OVALLE, SERGIO CARVAJAL, PAULINA, GRAN AVENIDA JOSÉ MIGUEL CARRERA, AV. ELIAS FERNÁNDEZ ALBANO, AV. ELIAS FERNÁNDEZ ALBANO, AV. SANTA ROSA, AV. SANTA ROSA, PATIO SANTA ROSA",
       "notas": "",
       "activo": "sí"
     },
@@ -3588,7 +3588,7 @@
       "terminal_fin": "SAN JOSE",
       "servicio": "SJ-LL",
       "sentido": "REGRESO",
-      "calles": "V. MANUEL RODRIGUEZ; AV. VIEL; AV. JOSE JOAQUIN PRIETO VIAL; AV. JOSE JOAQUIN PRIETO VIAL; AV. JOSE JOAQUIN PRIETO VIAL; ENLACE ORIENTE AV. AMÉRICO VESPUCIO; AV. AMERICO VESPUCIO; GRAN AVENIDA JOSÉ MIGUEL CARRERA; GRAN AVENIDA JOSÉ MIGUEL CARRERA; GRAN AVENIDA JOSÉ MIGUEL CARRERA; BALMACEDA; URMENETA; SAN JOSÉ; JOSÉ BESA",
+      "calles": "V. MANUEL RODRIGUEZ, AV. VIEL, AV. JOSE JOAQUIN PRIETO VIAL, AV. JOSE JOAQUIN PRIETO VIAL, AV. JOSE JOAQUIN PRIETO VIAL, ENLACE ORIENTE AV. AMÉRICO VESPUCIO, AV. AMERICO VESPUCIO, GRAN AVENIDA JOSÉ MIGUEL CARRERA, GRAN AVENIDA JOSÉ MIGUEL CARRERA, GRAN AVENIDA JOSÉ MIGUEL CARRERA, BALMACEDA, URMENETA, SAN JOSÉ, JOSÉ BESA",
       "notas": "",
       "activo": "SI"
     },
@@ -3601,7 +3601,7 @@
       "terminal_fin": "SANTA ANA",
       "servicio": "LL-SJ",
       "sentido": "IDA",
-      "calles": "LOS LIBERTADORES; AV. AMERICO VESPUCIO; AV. INDEPENDENCIA; AV. FERMIN VIVACETA; AV. FERMIN VIVACETA; AV. MANUEL RODRIGUEZ NORTE; AV. MANUEL RODRIGUEZ",
+      "calles": "LOS LIBERTADORES, AV. AMERICO VESPUCIO, AV. INDEPENDENCIA, AV. FERMIN VIVACETA, AV. FERMIN VIVACETA, AV. MANUEL RODRIGUEZ NORTE, AV. MANUEL RODRIGUEZ",
       "notas": "",
       "activo": "SI"
     },
@@ -3614,7 +3614,7 @@
       "terminal_fin": "DUCAUD",
       "servicio": "PL-DC-SA2-LC",
       "sentido": "IDA",
-      "calles": "Avenida Mapocho; Avenida Manuel Rodríguez Norte; Avenida Manuel Rodríguez; Avenida Manuel Rodríguez Sur; Avenida Viel; Avenida Centenario; San Ignacio de Loyola; Euclides; Orán; Avenida Alcalde Carlos Valdovinos; Gran Avenida José Miguel Carrera; Avenida Padre Hurtado; San Jose; Avenida Ducaud",
+      "calles": "Avenida Mapocho, Avenida Manuel Rodríguez Norte, Avenida Manuel Rodríguez, Avenida Manuel Rodríguez Sur, Avenida Viel, Avenida Centenario, San Ignacio de Loyola, Euclides, Orán, Avenida Alcalde Carlos Valdovinos, Gran Avenida José Miguel Carrera, Avenida Padre Hurtado, San Jose, Avenida Ducaud",
       "notas": "",
       "activo": "si"
     },
@@ -4399,7 +4399,7 @@
       "terminal_fin": "MAPOCHO- AV BRASIL",
       "servicio": "PL-DC-SA2-LC",
       "sentido": "REGRESO",
-      "calles": "Avenida Ducaud; Condell; Avenida Padre Hurtado; Ernesto Riquelme; Gran Avenida José Miguel Carrera; San Diego; Tarapacá; Zenteno; Morandé; Avenida Presidente Balmaceda; Avenida Brasil.",
+      "calles": "Avenida Ducaud, Condell, Avenida Padre Hurtado, Ernesto Riquelme, Gran Avenida José Miguel Carrera, San Diego, Tarapacá, Zenteno, Morandé, Avenida Presidente Balmaceda, Avenida Brasil.",
       "notas": "",
       "activo": "si"
     },
@@ -5012,7 +5012,7 @@
       "terminal_fin": "DUCAUD",
       "servicio": "PL-DC-SA2-LC",
       "sentido": "IDA",
-      "calles": "Gran Avenida José Miguel Carrera; Avenida Padre Hurtado; San Jose; Avenida Ducaud",
+      "calles": "Gran Avenida José Miguel Carrera, Avenida Padre Hurtado, San Jose, Avenida Ducaud",
       "notas": "",
       "activo": "si"
     },
@@ -5149,7 +5149,7 @@
       "terminal_fin": "EIM LA CISTERNA ",
       "servicio": "PL-DC-SA2-LC",
       "sentido": "REGRESO",
-      "calles": "Avenida Ducaud; Condell; Avenida Padre Hurtado; Ernesto Riquelme; Gran Avenida José Miguel Carrera; Estacion Intermodal La Cisterna.",
+      "calles": "Avenida Ducaud, Condell, Avenida Padre Hurtado, Ernesto Riquelme, Gran Avenida José Miguel Carrera, Estacion Intermodal La Cisterna.",
       "notas": "",
       "activo": "si"
     },
@@ -5335,6 +5335,1300 @@
         [
           -70.664301,
           -33.537638
+        ]
+      ]
+    }
+  },
+  {
+    "metadata": {
+      "id": "arc_023",
+      "terminal_inicio": "SANTA ROSA",
+      "terminal_fin": "LAS MAOHMIAS",
+      "servicio": "RE-LB-SR",
+      "sentido": "",
+      "calles": "Patio Santa Rosa, Corredor Transantiago Santa Rosa Sur, El Ombú, el orgeon, primavera, calle 6, San Carlos amador neghme, Avenida Ejército Libertador",
+      "notas": "",
+      "activo": ""
+    },
+    "geometria": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -70.628247,
+          -33.607694
+        ],
+        [
+          -70.626872,
+          -33.607718
+        ],
+        [
+          -70.62708,
+          -33.600588
+        ],
+        [
+          -70.62708,
+          -33.600495
+        ],
+        [
+          -70.617634,
+          -33.599312
+        ],
+        [
+          -70.607234,
+          -33.598073
+        ],
+        [
+          -70.605233,
+          -33.597809
+        ],
+        [
+          -70.603164,
+          -33.597578
+        ],
+        [
+          -70.603101,
+          -33.597523
+        ],
+        [
+          -70.602584,
+          -33.597471
+        ],
+        [
+          -70.599663,
+          -33.597134
+        ],
+        [
+          -70.598532,
+          -33.596992
+        ],
+        [
+          -70.598022,
+          -33.596986
+        ],
+        [
+          -70.597067,
+          -33.596999
+        ],
+        [
+          -70.596091,
+          -33.597067
+        ],
+        [
+          -70.595364,
+          -33.596877
+        ],
+        [
+          -70.594809,
+          -33.596699
+        ],
+        [
+          -70.595974,
+          -33.590818
+        ],
+        [
+          -70.596009,
+          -33.590645
+        ]
+      ]
+    }
+  },
+  {
+    "metadata": {
+      "id": "arc_024",
+      "terminal_inicio": "LAS MAOHMIAS",
+      "terminal_fin": "SANTA ROSA",
+      "servicio": "RE-LB-SR",
+      "sentido": "",
+      "calles": "Las mahonias, Avenida Ejército Libertador, amador neghme, caletera, batallon, Corredor Transantiago Santa Rosa Sur, Patio Santa Rosa",
+      "notas": "",
+      "activo": ""
+    },
+    "geometria": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -70.596016,
+          -33.590737
+        ],
+        [
+          -70.596409,
+          -33.588219
+        ],
+        [
+          -70.596828,
+          -33.588739
+        ],
+        [
+          -70.602949,
+          -33.597511
+        ],
+        [
+          -70.603122,
+          -33.597524
+        ],
+        [
+          -70.60319,
+          -33.597575
+        ],
+        [
+          -70.603339,
+          -33.597585
+        ],
+        [
+          -70.606322,
+          -33.597947
+        ],
+        [
+          -70.607464,
+          -33.598062
+        ],
+        [
+          -70.607685,
+          -33.598081
+        ],
+        [
+          -70.607993,
+          -33.598184
+        ],
+        [
+          -70.608156,
+          -33.598226
+        ],
+        [
+          -70.608776,
+          -33.59828
+        ],
+        [
+          -70.610853,
+          -33.598542
+        ],
+        [
+          -70.610945,
+          -33.598494
+        ],
+        [
+          -70.615242,
+          -33.598985
+        ],
+        [
+          -70.618359,
+          -33.599345
+        ],
+        [
+          -70.623727,
+          -33.600068
+        ],
+        [
+          -70.627012,
+          -33.600498
+        ],
+        [
+          -70.627326,
+          -33.60052
+        ],
+        [
+          -70.627119,
+          -33.607686
+        ],
+        [
+          -70.629112,
+          -33.607731
+        ],
+        [
+          -70.629192,
+          -33.607731
+        ]
+      ]
+    }
+  },
+  {
+    "metadata": {
+      "id": "arc_025",
+      "terminal_inicio": "CARLOS VALDOVINOS",
+      "terminal_fin": "CERRILLOS",
+      "servicio": "CE",
+      "sentido": "",
+      "calles": "AV. VICUÑA MACKENNA PONIENTE, AV. SALVADOR ALLENDE GOSSENS, AV. SANTA ROSA, AV. LO OVALLE, AV. LO OVALLE, AV. LO ERRAZURIZ, AV. AEROPUERTO, AV. FERNÁNDEZ ALBANO, CALLE 1",
+      "notas": "",
+      "activo": ""
+    },
+    "geometria": null
+  },
+  {
+    "metadata": {
+      "id": "arc_026",
+      "terminal_inicio": "CERRILLOS ",
+      "terminal_fin": "CARLOS VALDOVINOS",
+      "servicio": "CE",
+      "sentido": "",
+      "calles": "CALLE 1, AV. FERNÁNDEZ ALBANO, AV. AEROPUERTO, AV. LO ERRÁZURIZ, AV. LO OVALLE, AV. LO OVALLE, AV. JOSÉ JOAQUÍN PRIETO VIAL, AV. ALCALDE CARLOS VALDOVINOS, AV. ALCALDE CARLOS VALDOVINOS",
+      "notas": "",
+      "activo": ""
+    },
+    "geometria": null
+  },
+  {
+    "metadata": {
+      "id": "arc_027",
+      "terminal_inicio": "LAS MAHONIAS",
+      "terminal_fin": "PIE ANDINO",
+      "servicio": "PA-CYT-SA-AM",
+      "sentido": "",
+      "calles": "AV. EJERCITO LIBERTADOR,AV. DOMINGO TOCORNAL,AV. PASEO PIE ANDINO",
+      "notas": "",
+      "activo": "si"
+    },
+    "geometria": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -70.596193,
+          -33.590656
+        ],
+        [
+          -70.596087,
+          -33.590997
+        ],
+        [
+          -70.595983,
+          -33.591615
+        ],
+        [
+          -70.595866,
+          -33.592468
+        ],
+        [
+          -70.595722,
+          -33.593249
+        ],
+        [
+          -70.595299,
+          -33.595525
+        ],
+        [
+          -70.595065,
+          -33.597081
+        ],
+        [
+          -70.594642,
+          -33.599373
+        ],
+        [
+          -70.59429,
+          -33.601401
+        ],
+        [
+          -70.59364,
+          -33.60307
+        ],
+        [
+          -70.593014,
+          -33.604878
+        ],
+        [
+          -70.589582,
+          -33.604479
+        ],
+        [
+          -70.583183,
+          -33.603757
+        ],
+        [
+          -70.578665,
+          -33.603222
+        ],
+        [
+          -70.573883,
+          -33.602546
+        ],
+        [
+          -70.568256,
+          -33.601781
+        ],
+        [
+          -70.564861,
+          -33.601316
+        ],
+        [
+          -70.562627,
+          -33.601143
+        ],
+        [
+          -70.556526,
+          -33.60076
+        ],
+        [
+          -70.556262,
+          -33.601746
+        ],
+        [
+          -70.555812,
+          -33.602275
+        ],
+        [
+          -70.555128,
+          -33.603049
+        ],
+        [
+          -70.55458,
+          -33.603839
+        ],
+        [
+          -70.554159,
+          -33.604425
+        ],
+        [
+          -70.553964,
+          -33.604377
+        ]
+      ]
+    }
+  },
+  {
+    "metadata": {
+      "id": "arc_028",
+      "terminal_inicio": "PIE ANDINO",
+      "terminal_fin": "LAS MAHONIAS",
+      "servicio": "PA-CYT-SA-AM",
+      "sentido": "REGRESO",
+      "calles": "AV. PASEO PIE ANDINO,AV. DOMINGO TOCORNAL,AV. EJERCITO LIBERTADOR",
+      "notas": "",
+      "activo": "si"
+    },
+    "geometria": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -70.553974,
+          -33.604386
+        ],
+        [
+          -70.554187,
+          -33.604439
+        ],
+        [
+          -70.554827,
+          -33.60352
+        ],
+        [
+          -70.555691,
+          -33.602361
+        ],
+        [
+          -70.556337,
+          -33.601698
+        ],
+        [
+          -70.556544,
+          -33.600691
+        ],
+        [
+          -70.558799,
+          -33.600832
+        ],
+        [
+          -70.56236,
+          -33.601067
+        ],
+        [
+          -70.565522,
+          -33.601309
+        ],
+        [
+          -70.570821,
+          -33.602021
+        ],
+        [
+          -70.575596,
+          -33.60267
+        ],
+        [
+          -70.581263,
+          -33.603372
+        ],
+        [
+          -70.58658,
+          -33.603997
+        ],
+        [
+          -70.592769,
+          -33.604786
+        ],
+        [
+          -70.592978,
+          -33.603934
+        ],
+        [
+          -70.593908,
+          -33.601959
+        ],
+        [
+          -70.594209,
+          -33.600382
+        ],
+        [
+          -70.594796,
+          -33.597105
+        ],
+        [
+          -70.595332,
+          -33.594109
+        ],
+        [
+          -70.595727,
+          -33.591989
+        ],
+        [
+          -70.595972,
+          -33.590679
+        ]
+      ]
+    }
+  },
+  {
+    "metadata": {
+      "id": "arc_029",
+      "terminal_inicio": "SUECIA",
+      "terminal_fin": "SAN ALFONSO",
+      "servicio": "PA-CYT-SA-AM",
+      "sentido": "",
+      "calles": "AV. SUECIA,AV. IRARRÁZAVAL,AV. DIEZ DE JULIO HUAMACHUCO,NATANIEL COX,AV. MANUEL ANTONIO MATTA,EL PARQUE,AV. TUPPER,PLAZA ERCILLA,AV. ALMIRANTE BLANCO ENCALADA,SAN ALFONSO,SAN ALFONSO,SEPULVEDA LEYTON,SAN VICENTE,RAMON SUBERCASEAUX",
+      "notas": "",
+      "activo": "si"
+    },
+    "geometria": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -70.60016,
+          -33.453421
+        ],
+        [
+          -70.599989,
+          -33.454461
+        ],
+        [
+          -70.600155,
+          -33.454581
+        ],
+        [
+          -70.601591,
+          -33.454464
+        ],
+        [
+          -70.605067,
+          -33.454093
+        ],
+        [
+          -70.607852,
+          -33.453789
+        ],
+        [
+          -70.611187,
+          -33.453406
+        ],
+        [
+          -70.613402,
+          -33.453153
+        ],
+        [
+          -70.615007,
+          -33.452982
+        ],
+        [
+          -70.61718,
+          -33.452954
+        ],
+        [
+          -70.618938,
+          -33.453178
+        ],
+        [
+          -70.620975,
+          -33.453482
+        ],
+        [
+          -70.622103,
+          -33.453624
+        ],
+        [
+          -70.623049,
+          -33.453286
+        ],
+        [
+          -70.625009,
+          -33.452393
+        ],
+        [
+          -70.625615,
+          -33.452233
+        ],
+        [
+          -70.627268,
+          -33.452341
+        ],
+        [
+          -70.628555,
+          -33.452441
+        ],
+        [
+          -70.629232,
+          -33.452305
+        ],
+        [
+          -70.630467,
+          -33.452001
+        ],
+        [
+          -70.631114,
+          -33.451871
+        ],
+        [
+          -70.631385,
+          -33.451871
+        ],
+        [
+          -70.632436,
+          -33.451657
+        ],
+        [
+          -70.633324,
+          -33.451635
+        ],
+        [
+          -70.634438,
+          -33.451625
+        ],
+        [
+          -70.635521,
+          -33.451738
+        ],
+        [
+          -70.636996,
+          -33.451961
+        ],
+        [
+          -70.638566,
+          -33.452257
+        ],
+        [
+          -70.640182,
+          -33.452596
+        ],
+        [
+          -70.641479,
+          -33.452852
+        ],
+        [
+          -70.642359,
+          -33.453011
+        ],
+        [
+          -70.643424,
+          -33.45319
+        ],
+        [
+          -70.644695,
+          -33.453415
+        ],
+        [
+          -70.645976,
+          -33.453639
+        ],
+        [
+          -70.647376,
+          -33.453849
+        ],
+        [
+          -70.648301,
+          -33.453987
+        ],
+        [
+          -70.648838,
+          -33.453962
+        ],
+        [
+          -70.650151,
+          -33.454179
+        ],
+        [
+          -70.651443,
+          -33.454392
+        ],
+        [
+          -70.652528,
+          -33.454408
+        ],
+        [
+          -70.652464,
+          -33.454867
+        ],
+        [
+          -70.652346,
+          -33.455637
+        ],
+        [
+          -70.652223,
+          -33.456395
+        ],
+        [
+          -70.651876,
+          -33.458643
+        ],
+        [
+          -70.651703,
+          -33.459701
+        ],
+        [
+          -70.65168,
+          -33.459808
+        ],
+        [
+          -70.653465,
+          -33.459973
+        ],
+        [
+          -70.655498,
+          -33.460232
+        ],
+        [
+          -70.656839,
+          -33.460406
+        ],
+        [
+          -70.657254,
+          -33.460393
+        ],
+        [
+          -70.657429,
+          -33.460267
+        ],
+        [
+          -70.657581,
+          -33.460057
+        ],
+        [
+          -70.657561,
+          -33.459708
+        ],
+        [
+          -70.657503,
+          -33.459164
+        ],
+        [
+          -70.657349,
+          -33.458622
+        ],
+        [
+          -70.657459,
+          -33.458367
+        ],
+        [
+          -70.657663,
+          -33.458207
+        ],
+        [
+          -70.657933,
+          -33.45814
+        ],
+        [
+          -70.658443,
+          -33.458192
+        ],
+        [
+          -70.65968,
+          -33.458277
+        ],
+        [
+          -70.65987,
+          -33.458292
+        ],
+        [
+          -70.66007,
+          -33.458246
+        ],
+        [
+          -70.660247,
+          -33.45807
+        ],
+        [
+          -70.660295,
+          -33.45717
+        ],
+        [
+          -70.660249,
+          -33.456948
+        ],
+        [
+          -70.660271,
+          -33.456804
+        ],
+        [
+          -70.660438,
+          -33.456646
+        ],
+        [
+          -70.66125,
+          -33.456727
+        ],
+        [
+          -70.66226,
+          -33.456818
+        ],
+        [
+          -70.663212,
+          -33.456901
+        ],
+        [
+          -70.663989,
+          -33.456964
+        ],
+        [
+          -70.665005,
+          -33.457056
+        ],
+        [
+          -70.666532,
+          -33.457314
+        ],
+        [
+          -70.667893,
+          -33.457541
+        ],
+        [
+          -70.669457,
+          -33.457827
+        ],
+        [
+          -70.6706,
+          -33.458036
+        ],
+        [
+          -70.671654,
+          -33.458214
+        ],
+        [
+          -70.672182,
+          -33.458327
+        ],
+        [
+          -70.673223,
+          -33.458384
+        ],
+        [
+          -70.674294,
+          -33.458443
+        ],
+        [
+          -70.674891,
+          -33.458477
+        ],
+        [
+          -70.674727,
+          -33.459161
+        ],
+        [
+          -70.674558,
+          -33.459896
+        ],
+        [
+          -70.674366,
+          -33.460736
+        ],
+        [
+          -70.674196,
+          -33.46145
+        ],
+        [
+          -70.673894,
+          -33.462781
+        ],
+        [
+          -70.673635,
+          -33.463881
+        ],
+        [
+          -70.673372,
+          -33.464985
+        ],
+        [
+          -70.673059,
+          -33.466367
+        ],
+        [
+          -70.673037,
+          -33.466589
+        ],
+        [
+          -70.672983,
+          -33.468178
+        ],
+        [
+          -70.672974,
+          -33.469445
+        ],
+        [
+          -70.674304,
+          -33.469442
+        ],
+        [
+          -70.675557,
+          -33.469463
+        ],
+        [
+          -70.675554,
+          -33.47065
+        ],
+        [
+          -70.675036,
+          -33.470643
+        ],
+        [
+          -70.674984,
+          -33.470803
+        ]
+      ]
+    }
+  },
+  {
+    "metadata": {
+      "id": "arc_030",
+      "terminal_inicio": "SAN ALFONSO",
+      "terminal_fin": "SUECIA",
+      "servicio": "PA-CYT-SA-AM",
+      "sentido": "IDA",
+      "calles": "RAMON SUBERCASEAUX,RAMON SUBERCASEAUX,AV. RONDIZONNI,ÑUBLE,CARLOS DITTBORN ,AV. MARATHON,AV. GRECIA,AV. CAMPOS DE DEPORTES,DUBLÉ ALMEYDA,AV. JOSÉ PEDRO ALESSANDRI,AV. CHILE ESPAÑA,AV. SUCRE,AV. SUECIA",
+      "notas": "",
+      "activo": "si"
+    },
+    "geometria": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -70.675055,
+          -33.470711
+        ],
+        [
+          -70.675059,
+          -33.47063
+        ],
+        [
+          -70.672521,
+          -33.470614
+        ],
+        [
+          -70.66926,
+          -33.470586
+        ],
+        [
+          -70.666906,
+          -33.470547
+        ],
+        [
+          -70.664908,
+          -33.470505
+        ],
+        [
+          -70.663433,
+          -33.470454
+        ],
+        [
+          -70.661247,
+          -33.470334
+        ],
+        [
+          -70.659259,
+          -33.470216
+        ],
+        [
+          -70.656737,
+          -33.470093
+        ],
+        [
+          -70.655976,
+          -33.470096
+        ],
+        [
+          -70.655308,
+          -33.470373
+        ],
+        [
+          -70.655004,
+          -33.47048
+        ],
+        [
+          -70.653294,
+          -33.470304
+        ],
+        [
+          -70.65117,
+          -33.470073
+        ],
+        [
+          -70.64853,
+          -33.469786
+        ],
+        [
+          -70.646473,
+          -33.469552
+        ],
+        [
+          -70.643966,
+          -33.469308
+        ],
+        [
+          -70.64009,
+          -33.468891
+        ],
+        [
+          -70.636323,
+          -33.468487
+        ],
+        [
+          -70.634038,
+          -33.468235
+        ],
+        [
+          -70.631485,
+          -33.467939
+        ],
+        [
+          -70.629522,
+          -33.467705
+        ],
+        [
+          -70.626527,
+          -33.467409
+        ],
+        [
+          -70.626212,
+          -33.467406
+        ],
+        [
+          -70.625533,
+          -33.46731
+        ],
+        [
+          -70.624063,
+          -33.467028
+        ],
+        [
+          -70.622034,
+          -33.466566
+        ],
+        [
+          -70.619453,
+          -33.466246
+        ],
+        [
+          -70.616978,
+          -33.465923
+        ],
+        [
+          -70.614936,
+          -33.465664
+        ],
+        [
+          -70.614783,
+          -33.465648
+        ],
+        [
+          -70.614843,
+          -33.465381
+        ],
+        [
+          -70.614913,
+          -33.464302
+        ],
+        [
+          -70.614969,
+          -33.463401
+        ],
+        [
+          -70.615004,
+          -33.462447
+        ],
+        [
+          -70.614969,
+          -33.462113
+        ],
+        [
+          -70.614896,
+          -33.461914
+        ],
+        [
+          -70.614744,
+          -33.461797
+        ],
+        [
+          -70.613514,
+          -33.461908
+        ],
+        [
+          -70.611896,
+          -33.46199
+        ],
+        [
+          -70.610167,
+          -33.462112
+        ],
+        [
+          -70.610078,
+          -33.461792
+        ],
+        [
+          -70.609667,
+          -33.459266
+        ],
+        [
+          -70.609319,
+          -33.456943
+        ],
+        [
+          -70.609332,
+          -33.456451
+        ],
+        [
+          -70.609154,
+          -33.455211
+        ],
+        [
+          -70.606243,
+          -33.455522
+        ],
+        [
+          -70.603226,
+          -33.455844
+        ],
+        [
+          -70.600879,
+          -33.456112
+        ],
+        [
+          -70.598071,
+          -33.456625
+        ],
+        [
+          -70.597823,
+          -33.456651
+        ],
+        [
+          -70.597776,
+          -33.455244
+        ],
+        [
+          -70.598572,
+          -33.454139
+        ],
+        [
+          -70.598319,
+          -33.452366
+        ],
+        [
+          -70.598034,
+          -33.450592
+        ],
+        [
+          -70.597868,
+          -33.449388
+        ],
+        [
+          -70.59789,
+          -33.449272
+        ],
+        [
+          -70.597817,
+          -33.449173
+        ],
+        [
+          -70.597569,
+          -33.44826
+        ],
+        [
+          -70.597436,
+          -33.447784
+        ],
+        [
+          -70.59761,
+          -33.447852
+        ],
+        [
+          -70.598772,
+          -33.447963
+        ],
+        [
+          -70.600669,
+          -33.448156
+        ],
+        [
+          -70.600466,
+          -33.449561
+        ],
+        [
+          -70.600312,
+          -33.451602
+        ],
+        [
+          -70.60014,
+          -33.453376
+        ]
+      ]
+    }
+  },
+  {
+    "metadata": {
+      "id": "arc_031",
+      "terminal_inicio": "RECOLETA",
+      "terminal_fin": "JORGE INOSTROZA",
+      "servicio": "RE-LB-SR",
+      "sentido": "",
+      "calles": "AVENIDA SALVADOR ALLENDE, AVENIDA RECOLETA",
+      "notas": "",
+      "activo": ""
+    },
+    "geometria": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -70.638324,
+          -33.378903
+        ],
+        [
+          -70.638025,
+          -33.3788
+        ],
+        [
+          -70.63793,
+          -33.378788
+        ],
+        [
+          -70.637954,
+          -33.37874
+        ],
+        [
+          -70.638044,
+          -33.378709
+        ],
+        [
+          -70.638557,
+          -33.378578
+        ],
+        [
+          -70.638448,
+          -33.378395
+        ],
+        [
+          -70.637727,
+          -33.376572
+        ],
+        [
+          -70.636978,
+          -33.374782
+        ],
+        [
+          -70.635359,
+          -33.37065
+        ],
+        [
+          -70.632469,
+          -33.363683
+        ],
+        [
+          -70.631142,
+          -33.36068
+        ],
+        [
+          -70.630655,
+          -33.360819
+        ],
+        [
+          -70.630445,
+          -33.360699
+        ],
+        [
+          -70.630898,
+          -33.360246
+        ],
+        [
+          -70.631219,
+          -33.360736
+        ],
+        [
+          -70.631252,
+          -33.360736
+        ]
+      ]
+    }
+  },
+  {
+    "metadata": {
+      "id": "arc_032",
+      "terminal_inicio": "JORGE INOSTROZA",
+      "terminal_fin": "RECOLETA",
+      "servicio": "RE-LB-SR",
+      "sentido": "",
+      "calles": "AVENIDA RECOLETA, AVENIDA SALVADOR ALLENDE",
+      "notas": "",
+      "activo": ""
+    },
+    "geometria": {
+      "type": "LineString",
+      "coordinates": [
+        [
+          -70.631296,
+          -33.360669
+        ],
+        [
+          -70.630606,
+          -33.360791
+        ],
+        [
+          -70.630504,
+          -33.36064
+        ],
+        [
+          -70.630917,
+          -33.360274
+        ],
+        [
+          -70.631287,
+          -33.361009
+        ],
+        [
+          -70.632806,
+          -33.364496
+        ],
+        [
+          -70.634514,
+          -33.368612
+        ],
+        [
+          -70.635625,
+          -33.371329
+        ],
+        [
+          -70.63669,
+          -33.374046
+        ],
+        [
+          -70.638084,
+          -33.377475
+        ],
+        [
+          -70.638557,
+          -33.378578
+        ],
+        [
+          -70.63797,
+          -33.378735
+        ],
+        [
+          -70.638174,
+          -33.378851
+        ],
+        [
+          -70.638204,
+          -33.378861
         ]
       ]
     }
