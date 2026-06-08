@@ -158,6 +158,86 @@ body {
 }
 
 /* ============================================================
+   BARRA DE CÉLULA (filtro grande, lo primero)
+   ============================================================ */
+
+.celula-bar {
+    margin-bottom: 18px;
+}
+
+.celula-bar-label {
+    display: block;
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+}
+
+.celulas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.celula-pill {
+    flex: 1 1 auto;
+    min-width: 90px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    padding: 16px 14px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease, transform 0.08s ease;
+}
+
+.celula-pill:active {
+    transform: scale(0.97);
+}
+
+.celula-pill.activa {
+    background: var(--naranja);
+    border-color: var(--naranja);
+    color: #1A0700;
+}
+
+/* ============================================================
+   FICHA TÉCNICA (distancia / duración en el detalle)
+   ============================================================ */
+
+.ficha {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.ficha-item {
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 4px 10px;
+    font-family: 'Archivo', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+}
+
+.ficha-item b {
+    color: var(--naranja);
+    font-weight: 900;
+}
+
+/* ============================================================
    META DE RESULTADOS
    ============================================================ */
 

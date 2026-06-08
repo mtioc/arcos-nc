@@ -6,6 +6,19 @@
 let ARCOS = [];
 let MAPA = null;
 let CAPA_RUTA = null;
+let CELULA_ACTIVA = '';   // '' = todas las células
+
+// Alias para unificar células escritas distinto (mismo lugar, distinta forma).
+// Agregá acá cualquier variante nueva que aparezca → forma canónica.
+const ALIAS_CELULA = {
+    'LL-SJ': 'SJ-LL',
+};
+
+function normalizarCelula(s) {
+    if (!s) return null;
+    const c = s.trim().toUpperCase();
+    return ALIAS_CELULA[c] || c || null;
+}
 
 // -----------------------------------------------------------------------------
 // CARGA INICIAL
@@ -13,7 +26,7 @@ let CAPA_RUTA = null;
 
 async function init() {
     try {
-        const res = await fetch('rutas_consolidadas.json?v=' + Date.now());
+        const res = await fetch('rutas_consolidadas.json');
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const raw = await res.json();
         ARCOS = raw
@@ -46,9 +59,13 @@ function normalizarArco(reg) {
         terminal_inicio: (m.terminal_inicio || '').trim(),
         terminal_fin:    (m.terminal_fin || '').trim(),
         servicio:        (m.servicio || '').trim() || null,
+        celula:          normalizarCelula(m.servicio),   // ← el campo "servicio" trae la célula
         sentido:         (m.sentido || '').trim() || null,
         calles:          parsearCalles(m.calles),
         notas:           (m.notas || '').trim() || null,
+        // Opcionales: si los sumás al Excel/JSON, aparecen solos en el detalle.
+        distancia_km:    m.distancia_km ?? null,
+        duracion_min:    m.duracion_min ?? null,
         coordenadas:     tiene_mapa ? geom.coordinates : null,
         tiene_mapa
     };
@@ -67,11 +84,35 @@ function parsearCalles(s) {
 function poblarSelectores() {
     const terminalesInicio = [...new Set(ARCOS.map(a => a.terminal_inicio).filter(Boolean))].sort();
     const terminalesFin    = [...new Set(ARCOS.map(a => a.terminal_fin).filter(Boolean))].sort();
-    const servicios        = [...new Set(ARCOS.map(a => a.servicio).filter(Boolean))].sort();
 
     poblarSelect('filtro-terminal-inicio', terminalesInicio);
     poblarSelect('filtro-terminal-fin',    terminalesFin);
-    poblarSelect('filtro-servicio',        servicios);
+
+    renderCelulaPills();
+}
+
+// Pills grandes de célula (lo primero que ve el conductor)
+function renderCelulaPills() {
+    const cont = document.getElementById('celulas');
+    if (!cont) return;
+
+    const celulas = [...new Set(ARCOS.map(a => a.celula).filter(Boolean))].sort();
+    const opciones = ['', ...celulas];   // '' = Todas
+
+    cont.innerHTML = opciones.map(c => `
+        <button class="celula-pill ${c === CELULA_ACTIVA ? 'activa' : ''}" data-celula="${escapar(c)}">
+            ${c ? escapar(c) : 'Todas'}
+        </button>
+    `).join('');
+
+    cont.querySelectorAll('.celula-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+            CELULA_ACTIVA = btn.dataset.celula;
+            cont.querySelectorAll('.celula-pill').forEach(b => b.classList.remove('activa'));
+            btn.classList.add('activa');
+            filtrar();
+        });
+    });
 }
 
 function poblarSelect(id, valores) {
@@ -97,7 +138,6 @@ function bindEventos() {
     document.getElementById('busqueda').addEventListener('input', filtrar);
     document.getElementById('filtro-terminal-inicio').addEventListener('change', filtrar);
     document.getElementById('filtro-terminal-fin').addEventListener('change', filtrar);
-    document.getElementById('filtro-servicio').addEventListener('change', filtrar);
     document.getElementById('limpiar').addEventListener('click', limpiarFiltros);
     document.getElementById('btn-volver').addEventListener('click', volverALista);
 }
@@ -110,17 +150,16 @@ function filtrar() {
     const q  = document.getElementById('busqueda').value.toLowerCase().trim();
     const ti = document.getElementById('filtro-terminal-inicio').value;
     const tf = document.getElementById('filtro-terminal-fin').value;
-    const sv = document.getElementById('filtro-servicio').value;
 
     const filtrados = ARCOS.filter(a => {
+        if (CELULA_ACTIVA && a.celula !== CELULA_ACTIVA) return false;
         if (ti && a.terminal_inicio !== ti) return false;
         if (tf && a.terminal_fin !== tf)    return false;
-        if (sv && a.servicio !== sv)        return false;
         if (q) {
             const hay = [
                 a.terminal_inicio,
                 a.terminal_fin,
-                a.servicio,
+                a.celula,
                 ...(a.calles || [])
             ].filter(Boolean).join(' ').toLowerCase();
             if (!hay.includes(q)) return false;
@@ -135,7 +174,9 @@ function limpiarFiltros() {
     document.getElementById('busqueda').value = '';
     document.getElementById('filtro-terminal-inicio').value = '';
     document.getElementById('filtro-terminal-fin').value = '';
-    document.getElementById('filtro-servicio').value = '';
+    CELULA_ACTIVA = '';
+    document.querySelectorAll('.celula-pill').forEach(b =>
+        b.classList.toggle('activa', b.dataset.celula === ''));
     renderLista(ARCOS);
 }
 
@@ -168,7 +209,7 @@ function renderLista(arcos) {
                     ${a.tiene_mapa ? '● con mapa' : '○ sin mapa'}
                 </span>
             </div>
-            ${a.servicio ? `<span class="arco-servicio">${escapar(a.servicio)}</span>` : ''}
+            ${a.celula ? `<span class="arco-servicio">${escapar(a.celula)}</span>` : ''}
         </li>
     `).join('');
 
@@ -200,8 +241,24 @@ function mostrarDetalle(arco) {
     document.getElementById('detalle-titulo').textContent =
         `${arco.terminal_inicio} → ${arco.terminal_fin}`;
 
-    const subt = [arco.sentido, arco.servicio].filter(Boolean).join(' · ');
+    const subt = [arco.sentido, arco.celula].filter(Boolean).join(' · ');
     document.getElementById('detalle-subtitulo').textContent = subt || '—';
+
+    // Ficha técnica (distancia / duración planificada) — solo si vienen en el JSON
+    const ficha = document.getElementById('ficha');
+    if (ficha) {
+        const items = [];
+        if (arco.distancia_km != null && arco.distancia_km !== '')
+            items.push(`<span class="ficha-item"><b>${escapar(String(arco.distancia_km))}</b> km</span>`);
+        if (arco.duracion_min != null && arco.duracion_min !== '')
+            items.push(`<span class="ficha-item"><b>${escapar(String(arco.duracion_min))}</b> min plan</span>`);
+        if (items.length) {
+            ficha.innerHTML = items.join('');
+            ficha.classList.remove('oculto');
+        } else {
+            ficha.classList.add('oculto');
+        }
+    }
 
     // Lista de calles
     const ol = document.getElementById('lista-calles');

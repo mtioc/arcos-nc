@@ -22,17 +22,22 @@
     <section id="vista-lista" class="vista">
 
         <header class="header">
-            <div class="header-tag">CONECTA MOBILITY</div>
+            <div class="header-tag">HUALPÉN</div>
             <h1 class="title">Arcos NC</h1>
             <p class="subtitle">Rutas no comerciales · Consulta para conductores</p>
         </header>
+
+        <div class="celula-bar">
+            <span class="celula-bar-label">Elegí tu célula</span>
+            <div id="celulas" class="celulas"></div>
+        </div>
 
         <div class="filtros">
             <input
                 type="search"
                 id="busqueda"
                 class="busqueda"
-                placeholder="Buscar terminal, calle o servicio…"
+                placeholder="Buscar terminal o calle…"
                 autocomplete="off"
             />
 
@@ -44,10 +49,6 @@
                     <option value="">Hasta · todos</option>
                 </select>
             </div>
-
-            <select id="filtro-servicio" class="select">
-                <option value="">Célula Operacional · todos</option>
-            </select>
         </div>
 
         <div class="resultados-meta">
@@ -73,6 +74,7 @@
             <div class="header-detalle-text">
                 <h2 class="title-detalle" id="detalle-titulo"></h2>
                 <p class="subtitle-detalle" id="detalle-subtitulo"></p>
+                <div id="ficha" class="ficha oculto"></div>
             </div>
         </header>
 
