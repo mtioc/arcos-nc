@@ -32,7 +32,21 @@
             <div id="celulas" class="celulas"></div>
         </div>
 
-        <div class="filtros">
+        <div id="bloque-terminal-inicio" class="terminal-bar oculto">
+            <span class="celula-bar-label">Desde</span>
+            <div id="terminales-inicio" class="celulas"></div>
+        </div>
+
+        <div id="bloque-terminal-fin" class="terminal-bar oculto">
+            <span class="celula-bar-label">Hasta</span>
+            <div id="terminales-fin" class="celulas"></div>
+        </div>
+
+        <button id="toggle-busqueda" class="buscar-toggle" type="button">
+            ¿No encontrás tu ruta? Buscar por calle
+        </button>
+
+        <div id="bloque-busqueda" class="filtros oculto">
             <input
                 type="search"
                 id="busqueda"
@@ -40,15 +54,6 @@
                 placeholder="Buscar terminal o calle…"
                 autocomplete="off"
             />
-
-            <div class="filtros-row">
-                <select id="filtro-terminal-inicio" class="select">
-                    <option value="">Desde · todos</option>
-                </select>
-                <select id="filtro-terminal-fin" class="select">
-                    <option value="">Hasta · todos</option>
-                </select>
-            </div>
         </div>
 
         <div class="resultados-meta">
