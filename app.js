@@ -7,6 +7,8 @@ let ARCOS = [];
 let MAPA = null;
 let CAPA_RUTA = null;
 let CELULA_ACTIVA = '';   // '' = todas las células
+let TERMINAL_INICIO_ACTIVO = '';  // '' = ninguno elegido todavía
+let TERMINAL_FIN_ACTIVO = '';
 
 // Alias para unificar células escritas distinto (mismo lugar, distinta forma).
 // Agregá acá cualquier variante nueva que aparezca → forma canónica.
@@ -82,22 +84,28 @@ function parsearCalles(s) {
 // -----------------------------------------------------------------------------
 
 function poblarSelectores() {
-    const terminalesInicio = [...new Set(ARCOS.map(a => a.terminal_inicio).filter(Boolean))].sort();
-    const terminalesFin    = [...new Set(ARCOS.map(a => a.terminal_fin).filter(Boolean))].sort();
-
-    poblarSelect('filtro-terminal-inicio', terminalesInicio);
-    poblarSelect('filtro-terminal-fin',    terminalesFin);
-
     renderCelulaPills();
+    renderTerminalInicioPills();
+    renderTerminalFinPills();
 }
 
-// Pills grandes de célula (lo primero que ve el conductor)
+// Arcos que sobreviven a los filtros de niveles ANTERIORES al que se está armando.
+// (para que cada nivel de pills muestre solo opciones que todavía tienen sentido)
+function arcosHastaCelula() {
+    return CELULA_ACTIVA ? ARCOS.filter(a => a.celula === CELULA_ACTIVA) : ARCOS;
+}
+function arcosHastaTerminalInicio() {
+    const base = arcosHastaCelula();
+    return TERMINAL_INICIO_ACTIVO ? base.filter(a => a.terminal_inicio === TERMINAL_INICIO_ACTIVO) : base;
+}
+
+// Nivel 1: célula
 function renderCelulaPills() {
     const cont = document.getElementById('celulas');
     if (!cont) return;
 
     const celulas = [...new Set(ARCOS.map(a => a.celula).filter(Boolean))].sort();
-    const opciones = ['', ...celulas];   // '' = Todas
+    const opciones = ['', ...celulas];
 
     cont.innerHTML = opciones.map(c => `
         <button class="celula-pill ${c === CELULA_ACTIVA ? 'activa' : ''}" data-celula="${escapar(c)}">
@@ -108,25 +116,78 @@ function renderCelulaPills() {
     cont.querySelectorAll('.celula-pill').forEach(btn => {
         btn.addEventListener('click', () => {
             CELULA_ACTIVA = btn.dataset.celula;
-            cont.querySelectorAll('.celula-pill').forEach(b => b.classList.remove('activa'));
-            btn.classList.add('activa');
+            TERMINAL_INICIO_ACTIVO = '';
+            TERMINAL_FIN_ACTIVO = '';
+            renderCelulaPills();
+            renderTerminalInicioPills();
+            renderTerminalFinPills();
             filtrar();
         });
     });
 }
 
-function poblarSelect(id, valores) {
-    const sel = document.getElementById(id);
-    if (!sel) return;
-    if (valores.length === 0) {
-        sel.disabled = true;
+// Nivel 2: terminal de inicio, acotado a la célula ya elegida
+function renderTerminalInicioPills() {
+    const bloque = document.getElementById('bloque-terminal-inicio');
+    const cont = document.getElementById('terminales-inicio');
+    if (!bloque || !cont) return;
+
+    const terminales = [...new Set(arcosHastaCelula().map(a => a.terminal_inicio).filter(Boolean))].sort();
+
+    if (terminales.length === 0) {
+        bloque.classList.add('oculto');
         return;
     }
-    valores.forEach(v => {
-        const opt = document.createElement('option');
-        opt.value = v;
-        opt.textContent = v;
-        sel.appendChild(opt);
+    bloque.classList.remove('oculto');
+
+    cont.innerHTML = terminales.map(t => `
+        <button class="celula-pill pill-secundaria ${t === TERMINAL_INICIO_ACTIVO ? 'activa' : ''}" data-terminal="${escapar(t)}">
+            ${escapar(t)}
+        </button>
+    `).join('');
+
+    cont.querySelectorAll('.celula-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+            TERMINAL_INICIO_ACTIVO = (btn.dataset.terminal === TERMINAL_INICIO_ACTIVO) ? '' : btn.dataset.terminal;
+            TERMINAL_FIN_ACTIVO = '';
+            renderTerminalInicioPills();
+            renderTerminalFinPills();
+            filtrar();
+        });
+    });
+}
+
+// Nivel 3: terminal de fin — SOLO aparece si con célula+inicio todavía hay más de un destino posible
+function renderTerminalFinPills() {
+    const bloque = document.getElementById('bloque-terminal-fin');
+    const cont = document.getElementById('terminales-fin');
+    if (!bloque || !cont) return;
+
+    if (!TERMINAL_INICIO_ACTIVO) {
+        bloque.classList.add('oculto');
+        return;
+    }
+
+    const terminales = [...new Set(arcosHastaTerminalInicio().map(a => a.terminal_fin).filter(Boolean))].sort();
+
+    if (terminales.length <= 1) {
+        bloque.classList.add('oculto');
+        return; // 0 o 1 destino: no hace falta preguntar, se muestra directo en la lista
+    }
+    bloque.classList.remove('oculto');
+
+    cont.innerHTML = terminales.map(t => `
+        <button class="celula-pill pill-secundaria ${t === TERMINAL_FIN_ACTIVO ? 'activa' : ''}" data-terminal="${escapar(t)}">
+            ${escapar(t)}
+        </button>
+    `).join('');
+
+    cont.querySelectorAll('.celula-pill').forEach(btn => {
+        btn.addEventListener('click', () => {
+            TERMINAL_FIN_ACTIVO = (btn.dataset.terminal === TERMINAL_FIN_ACTIVO) ? '' : btn.dataset.terminal;
+            renderTerminalFinPills();
+            filtrar();
+        });
     });
 }
 
@@ -136,10 +197,14 @@ function poblarSelect(id, valores) {
 
 function bindEventos() {
     document.getElementById('busqueda').addEventListener('input', filtrar);
-    document.getElementById('filtro-terminal-inicio').addEventListener('change', filtrar);
-    document.getElementById('filtro-terminal-fin').addEventListener('change', filtrar);
     document.getElementById('limpiar').addEventListener('click', limpiarFiltros);
     document.getElementById('btn-volver').addEventListener('click', volverALista);
+
+    document.getElementById('toggle-busqueda').addEventListener('click', () => {
+        document.getElementById('bloque-busqueda').classList.toggle('oculto');
+        const abierto = !document.getElementById('bloque-busqueda').classList.contains('oculto');
+        if (abierto) document.getElementById('busqueda').focus();
+    });
 }
 
 // -----------------------------------------------------------------------------
@@ -147,14 +212,12 @@ function bindEventos() {
 // -----------------------------------------------------------------------------
 
 function filtrar() {
-    const q  = document.getElementById('busqueda').value.toLowerCase().trim();
-    const ti = document.getElementById('filtro-terminal-inicio').value;
-    const tf = document.getElementById('filtro-terminal-fin').value;
+    const q = document.getElementById('busqueda').value.toLowerCase().trim();
 
     const filtrados = ARCOS.filter(a => {
         if (CELULA_ACTIVA && a.celula !== CELULA_ACTIVA) return false;
-        if (ti && a.terminal_inicio !== ti) return false;
-        if (tf && a.terminal_fin !== tf)    return false;
+        if (TERMINAL_INICIO_ACTIVO && a.terminal_inicio !== TERMINAL_INICIO_ACTIVO) return false;
+        if (TERMINAL_FIN_ACTIVO && a.terminal_fin !== TERMINAL_FIN_ACTIVO) return false;
         if (q) {
             const hay = [
                 a.terminal_inicio,
@@ -172,11 +235,13 @@ function filtrar() {
 
 function limpiarFiltros() {
     document.getElementById('busqueda').value = '';
-    document.getElementById('filtro-terminal-inicio').value = '';
-    document.getElementById('filtro-terminal-fin').value = '';
+    document.getElementById('bloque-busqueda').classList.add('oculto');
     CELULA_ACTIVA = '';
-    document.querySelectorAll('.celula-pill').forEach(b =>
-        b.classList.toggle('activa', b.dataset.celula === ''));
+    TERMINAL_INICIO_ACTIVO = '';
+    TERMINAL_FIN_ACTIVO = '';
+    renderCelulaPills();
+    renderTerminalInicioPills();
+    renderTerminalFinPills();
     renderLista(ARCOS);
 }
 
