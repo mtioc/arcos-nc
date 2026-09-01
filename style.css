@@ -521,6 +521,22 @@ body {
     font-family: 'Manrope', sans-serif !important;
 }
 
+/* OSM no tiene versión dark nativa: invertimos + rotamos el matiz de las
+   teselas para simular el look oscuro que tenía Carto Dark Matter. */
+.leaflet-tile-pane {
+    filter: invert(1) hue-rotate(180deg) brightness(0.85) contrast(0.9) saturate(0.7);
+}
+
+.leaflet-control-attribution {
+    background: rgba(10, 10, 10, 0.75) !important;
+    color: var(--text-muted) !important;
+    font-size: 10px !important;
+}
+
+.leaflet-control-attribution a {
+    color: var(--text-dim) !important;
+}
+
 .leaflet-popup-content-wrapper {
     background: var(--bg-card) !important;
     color: var(--text) !important;
